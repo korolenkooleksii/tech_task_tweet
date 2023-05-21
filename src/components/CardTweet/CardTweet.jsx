@@ -75,7 +75,7 @@ export const CardTweet = ({ user }) => {
           <TextBoard>
 
             <Text>
-              {String(tweets).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              {String(tweets).replace(/\B(?=(\d{3})+(?!\d))/g, ",")} {" "}
               Tweets
             </Text>
 
