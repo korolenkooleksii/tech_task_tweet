@@ -61,7 +61,7 @@ export const Button = styled.button`
 `;
 
 export const LoadMore = styled.div`
-  margin: 30px 30px;
+  margin: 30px;
 `;
 
 export const Board = styled.div`

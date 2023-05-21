@@ -16,6 +16,7 @@ import {
   Info,
   Item,
   ListBox,
+  LoadMore,
   TweetsBox,
 } from "./ListTweets.styled";
 
@@ -65,7 +66,7 @@ const ListTweets = () => {
 
   return (
     <>
-      {!isError && (
+      {isError && (
         <Board
           style={{
             margin: "0 auto",
@@ -76,7 +77,7 @@ const ListTweets = () => {
         </Board>
       )}
 
-      {!isLoading && isError && (
+      {!isLoading && !isError && (
         <TweetsBox>
           <FilterBoard>
             <NavLink to="/">
@@ -121,11 +122,11 @@ const ListTweets = () => {
           </ListBox>
 
           {users.length >= TOTAL ? (
-            <Loaded>
-              <Info>You have downloaded all the tweets.</Info>
-            </Loaded>
-          ) : (
             <Board>
+              <Info>You have downloaded all the tweets.</Info>
+            </Board>
+          ) : (
+            <LoadMore>
               <Button
                 type="button"
                 onClick={() => loadMore()}
@@ -133,7 +134,7 @@ const ListTweets = () => {
               >
                 Load more...
               </Button>
-            </Board>
+            </LoadMore>
           )}
         </TweetsBox>
       )}
