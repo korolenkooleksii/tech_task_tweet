@@ -2,7 +2,9 @@ import styled from "@emotion/styled";
 
 export const TweetsBox = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
 `;
@@ -62,8 +64,10 @@ export const LoadMore = styled.div`
   margin: 30px 30px;
 `;
 
-export const Loaded = styled.div`
-  display: inline-block;
+export const Board = styled.div`
+  display: flex;
+  justify-content: center;
+  max-width: 450px;
   margin: 30px 30px;
   padding: 10px 20px;
   border: 1px solid transparent;

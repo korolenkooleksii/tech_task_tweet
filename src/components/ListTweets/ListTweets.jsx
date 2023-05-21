@@ -9,14 +9,13 @@ import { NavLink } from "react-router-dom";
 import { CardTweet } from "../CardTweet/CardTweet";
 import { TbArrowNarrowLeft } from "react-icons/tb";
 import {
+  Board,
   Button,
   Filter,
   FilterBoard,
   Info,
   Item,
   ListBox,
-  LoadMore,
-  Loaded,
   TweetsBox,
 } from "./ListTweets.styled";
 
@@ -65,70 +64,80 @@ const ListTweets = () => {
   };
 
   return (
-    // isError && messageError('Oops... Try refreshing the data after a while.')
+    <>
+      {!isError && (
+        <Board
+          style={{
+            margin: "0 auto",
+            minWidth: "500px",
+          }}
+        >
+          <Info>Oops... Try refreshing the data after a while.</Info>
+        </Board>
+      )}
 
-    !isLoading &&
-    !isError && (
-      <TweetsBox >
-        <FilterBoard>
-          <NavLink to="/">
-            <Button
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "8px",
-              }}
-            >
-              <TbArrowNarrowLeft />
-              Go back
-            </Button>
-          </NavLink>
-
-          <Filter>
-            <Item>
-              <Button type="button" onClick={() => filterUsers("all")}>
-                All
+      {!isLoading && isError && (
+        <TweetsBox>
+          <FilterBoard>
+            <NavLink to="/">
+              <Button
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "8px",
+                }}
+              >
+                <TbArrowNarrowLeft />
+                Go back
               </Button>
-            </Item>
+            </NavLink>
 
-            <Item>
-              <Button type="button" onClick={() => filterUsers(false)}>
-                Follow
+            <Filter>
+              <Item>
+                <Button type="button" onClick={() => filterUsers("all")}>
+                  All
+                </Button>
+              </Item>
+
+              <Item>
+                <Button type="button" onClick={() => filterUsers(false)}>
+                  Follow
+                </Button>
+              </Item>
+
+              <Item>
+                <Button type="button" onClick={() => filterUsers(true)}>
+                  Followings
+                </Button>
+              </Item>
+            </Filter>
+          </FilterBoard>
+
+          <ListBox>
+            {filteredUsers.map((user) => (
+              <CardTweet key={user.id} user={user} />
+            ))}
+          </ListBox>
+
+          {users.length >= TOTAL ? (
+            <Loaded>
+              <Info>You have downloaded all the tweets.</Info>
+            </Loaded>
+          ) : (
+            <Board>
+              <Button
+                type="button"
+                onClick={() => loadMore()}
+                isLoading={isFetching}
+              >
+                Load more...
               </Button>
-            </Item>
-
-            <Item>
-              <Button type="button" onClick={() => filterUsers(true)}>
-                Followings
-              </Button>
-            </Item>
-          </Filter>
-        </FilterBoard>
-
-        <ListBox>
-          {filteredUsers.map((user) => (
-            <CardTweet key={user.id} user={user} />
-          ))}
-        </ListBox>
-
-        {users.length >= TOTAL ? (
-        <Loaded>
-          <Info>You have downloaded all the tweets.</Info>
-        </Loaded>
-        ) : (
-          <LoadMore>
-            <Button
-              type="button"
-              onClick={() => loadMore()}
-              isLoading={isFetching}
-            >
-              Load more...
-            </Button>
-          </LoadMore>
-        )}
-      </TweetsBox>
-    )
+            </Board>
+          )}
+        </TweetsBox>
+      )}
+    </>
   );
 };
 
