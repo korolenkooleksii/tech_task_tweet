@@ -90,8 +90,14 @@ export const BtnFollow = styled.button`
   font-size: 18px;
   line-height: 1.22;
   text-transform: uppercase;
+  transition: all 250ms ease-in-out;
   background-color: ${(p) => p.theme.colors.fiolo};
   color: ${(p) => p.theme.colors.secondary};
+
+  :hover {
+    background-color: ${(p) => p.theme.colors.green};
+    
+  }
 `;
 
 export const BtnFollowing = styled.button`
@@ -107,6 +113,12 @@ export const BtnFollowing = styled.button`
   font-size: 18px;
   line-height: 1.22;
   text-transform: uppercase;
+  transition: all 250ms ease-in-out;
   background-color: ${(p) => p.theme.colors.green};
   color: ${(p) => p.theme.colors.secondary};
+
+  :hover {
+    background-color: ${(p) => p.theme.colors.fiolo};
+    
+  }
 `;

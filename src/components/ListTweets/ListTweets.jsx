@@ -121,11 +121,13 @@ const ListTweets = () => {
             ))}
           </ListBox>
 
-          {users.length >= TOTAL ? (
+          {users.length >= TOTAL && filteredUsers.length > 0 && (
             <Board>
               <Info>You have downloaded all the tweets.</Info>
             </Board>
-          ) : (
+          )}
+
+          {users.length < TOTAL && filteredUsers.length > 0 && (
             <LoadMore>
               <Button
                 type="button"
@@ -135,6 +137,12 @@ const ListTweets = () => {
                 Load more...
               </Button>
             </LoadMore>
+          )}
+
+          {filteredUsers.length === 0 && (
+            <Board>
+              <Info>There are no such tweets.</Info>
+            </Board>
           )}
         </TweetsBox>
       )}

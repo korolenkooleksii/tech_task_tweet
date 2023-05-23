@@ -8,12 +8,12 @@ export const usersApi = createApi({
   tagTypes: ["Users"],
   endpoints: (builder) => ({
     getUsersByPage: builder.query({
-      query: (limit) => `/users/?completed=false&page=1&limit=${limit}`,
+      query: (limit) => `/tweets/?completed=false&page=1&limit=${limit}`,
       providesTags: ["Users"],
     }),
     updateUser: builder.mutation({
       query: ({body, id} ) => ({
-        url: `/users/${id}`,
+        url: `/tweets/${id}`,
         method: "PUT",
         body: body,
       }),
