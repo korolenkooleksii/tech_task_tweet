@@ -20,7 +20,6 @@ import {
   BtnFollowing,
   CardBox,
   CardInfo,
-  Line,
   Text,
   TextBoard,
 } from "./CardTweet.styled";
@@ -63,8 +62,6 @@ export const CardTweet = ({ user }) => {
   return (
     <>
       <CardBox>
-
-        <Line />
 
         <BoxImage>
           <Avatar src={avatar} alt={name} width="70" />
