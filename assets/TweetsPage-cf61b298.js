@@ -1,4 +1,4 @@
-import{g as U,Q as M,n as s,r as w,u as I,a as W,b as G,j as t,c as q,d as A,R as f,e as D,N as H}from"./index-15fe6a6a.js";const P=e=>e.followersId.followersId,Q=16,F=8;var R={exports:{}},Y="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",V=Y,J=V;function _(){}function L(){}L.resetWarningCache=_;var K=function(){function e(n,a,x,c,d,i){if(i!==J){var p=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw p.name="Invariant Violation",p}}e.isRequired=e;function r(){return e}var o={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:r,element:e,elementType:e,instanceOf:r,node:e,objectOf:r,oneOf:r,oneOfType:r,shape:r,exact:r,checkPropTypes:L,resetWarningCache:_};return o.PropTypes=o,o};R.exports=K();var X=R.exports;const m=U(X);const C=e=>{M.error(`Error! ${e}`,{theme:"colored",autoClose:2e3})},Z=e=>({...e,followers:e.followers+1,status:!0}),ee=e=>({...e,followers:e.followers-1,status:!1}),te=s.li`
+import{g as U,Q as M,n as s,r as w,u as I,a as W,b as G,j as t,c as q,d as A,R as f,e as D,N as H}from"./index-f755edf1.js";const P=e=>e.followersId.followersId,Q=16,F=8;var R={exports:{}},Y="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED",V=Y,J=V;function _(){}function L(){}L.resetWarningCache=_;var K=function(){function e(n,a,x,c,d,i){if(i!==J){var p=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw p.name="Invariant Violation",p}}e.isRequired=e;function r(){return e}var o={array:e,bigint:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:r,element:e,elementType:e,instanceOf:r,node:e,objectOf:r,oneOf:r,oneOfType:r,shape:r,exact:r,checkPropTypes:L,resetWarningCache:_};return o.PropTypes=o,o};R.exports=K();var X=R.exports;const m=U(X);const C=e=>{M.error(`Error! ${e}`,{theme:"colored",autoClose:2e3})},Z=e=>({...e,followers:e.followers+1,status:!0}),ee=e=>({...e,followers:e.followers-1,status:!1}),te=s.li`
   position: relative;
   width: 380px;
   height: 460px;
@@ -8,8 +8,8 @@ import{g as U,Q as M,n as s,r as w,u as I,a as W,b as G,j as t,c as q,d as A,R a
   justify-content: flex-end;
   border-radius: 20px;
   overflow: hidden;
-  background-image: url("/logo.webp"),
-    url("/picture.webp"),
+  background-image: url("./logo.webp"),
+    url("./picture.webp"),
     linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
   background-size: 76px 22px, 308px 168px, cover;
   background-repeat: no-repeat, no-repeat, no-repeat;
