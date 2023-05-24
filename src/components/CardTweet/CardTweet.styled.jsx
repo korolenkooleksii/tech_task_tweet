@@ -10,45 +10,56 @@ export const CardBox = styled.li`
   justify-content: flex-end;
   border-radius: 20px;
   overflow: hidden;
-  background-image: url("./logo.webp"),
-    url("./picture.webp"),
+  background-image: url("./logo.webp"), url("./picture.webp"),
     linear-gradient(114.99deg, #471ca9 -0.99%, #5736a3 54.28%, #4b2a99 78.99%);
   background-size: 76px 22px, 308px 168px, cover;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: top 20px left 20px, top 28px left 36px, center;
 
   :before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 380px;
-  height: 8px;
-  background-color: ${(p) => p.theme.colors.fiolo};
-  box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
-    inset 0px -2.19582px 4.39163px #ae7be3,
-    inset 0px 4.39163px 3.29372px #fbf8ff;
-}
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 380px;
+    height: 8px;
+    background-color: ${(p) => p.theme.colors.fiolo};
+    box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
+      inset 0px -2.19582px 4.39163px #ae7be3,
+      inset 0px 4.39163px 3.29372px #fbf8ff;
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border: 8px solid ${(p) => p.theme.colors.fiolo};
+    border-radius: 50%;
+    background-image: linear-gradient(
+      114.99deg,
+      #471ca9 -0.99%,
+      #5736a3 54.28%,
+      #4b2a99 78.99%
+    );
+    box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
+      inset 0px -2.19582px 4.39163px #ae7be3,
+      inset 0px 4.39163px 3.29372px #fbf8ff;
+  }
 `;
 
 export const BoxImage = styled.div`
   position: absolute;
+  z-index: 5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80px;
   height: 80px;
-  border: 8px solid ${(p) => p.theme.colors.fiolo};
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
-    inset 0px -2.19582px 4.39163px #ae7be3,
-    inset 0px 4.39163px 3.29372px #fbf8ff;
-  background-image: linear-gradient(
-    114.99deg,
-    #471ca9 -0.99%,
-    #5736a3 54.28%,
-    #4b2a99 78.99%
-  );
 `;
 
 export const Avatar = styled.img`
@@ -97,7 +108,6 @@ export const BtnFollow = styled.button`
 
   :hover {
     background-color: ${(p) => p.theme.colors.green};
-    
   }
 `;
 
@@ -120,6 +130,5 @@ export const BtnFollowing = styled.button`
 
   :hover {
     background-color: ${(p) => p.theme.colors.fiolo};
-    
   }
 `;
