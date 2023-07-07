@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <BrowserRouter basename="tech_task_tweet">
+        <BrowserRouter basename="tweet">
           <PersistGate loading={null} persistor={persistor}>
             <App />
           </PersistGate>
