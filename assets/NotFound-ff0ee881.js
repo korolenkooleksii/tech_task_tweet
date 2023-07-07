@@ -1,4 +1,4 @@
-import{n,u as o,j as t}from"./index-4346da45.js";import{B as s}from"./ListTweets.styled-c7ac1ca8.js";const r=n.div`
+import{n,u as o,j as t}from"./index-3452235e.js";import{B as s}from"./ListTweets.styled-9f6e18a1.js";const r=n.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
